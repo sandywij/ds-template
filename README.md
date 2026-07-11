@@ -1,1 +1,62 @@
-"\"# Data Journalism Project: [Project Name]\n\n## Goal\n[Describe the core question this analysis seeks to answer.]\n\n## Setup & Getting Started (For All Team Members)\n\nThis guide helps you set up the project environment so we can all run the analysis together, even if we have different versions of Python or packages installed on our computers. We are setting up a 'Virtual Environment' (`venv`) to keep this project isolated.\n\n### Step 1: Clone the Project & Navigate\nIf you haven't already, please clone the repository:\n`git clone [repo-url]`\nThen move into the project folder:\n`cd data_journalism_project`\n\n### Step 2: Setting up a Virtual Environment (The Sandbox)\n1.  **Create Venv**: Run this command to create the isolated sandbox folder:\\n`python3 -m venv .venv`\n2.  **Activate Venv**: This step tells your terminal to use the project's specific tools.\\n*   **For macOS/Linux:** `source .venv/bin/activate`\\n*   **For Windows:** `.\.venv\Scripts\activate`\\n*(Your terminal prompt should change to show `(.venv)` at the start, which confirms success!)*\n\n### Step 3: Installing Required Packages\nWith your environment active (`(.venv)` visible), run this command to install everything listed in `requirements.txt`:\n`pip install -r requirements.txt`\n\n---\\n**✅ You are now ready to go!**\\n\n## Data Source & Workflow\\n*   **Raw Data Location**: 01_data/source_dataset.csv (***DO NOT TOUCH THIS FOLDER***)\\n\n### Running the Analysis (The Standard Workflow)\nFollow these steps sequentially:\n\n1.  **Preprocessing**: Run this script to load raw data, clean it, and create a stable intermediate file.\n    `python 02_scripts/data_preprocessing.py`\\n    *(This creates `results/cleaned_data.csv`, which is the 'golden copy' we use for everything else.)*\n\n2.  **Exploration & Visualization**: Open and run your notebook to test hypotheses and create charts.\n    Open `03_notebooks/exploration.ipynb` and execute all cells up to the final visualization block.\\n    *(This step should place figures in the `results/` folder.)*\n\n3.  **Storytelling**: Use the finalized data (`results/cleaned_data.csv`) and all figures from the `results/` directory to write your narrative article."
+# 🚀 Quickstart Guide: Data Journalism Project \[Project Name]
+
+Welcome! This repository provides a structured environment built for rapid data exploration and reproducible analysis. Follow these three phases in order to get started.
+
+---
+
+## 🟢 Phase 1: Setup & Environment
+You must create an isolated sandbox environment first.
+
+### 1. Clone Repository
+```bash
+git clone [repo-url]
+cd data_journalism_project
+```
+
+### 2. Create Venv (Virtual Environment)
+This isolates the project dependencies from your global Python installation.
+```bash
+python3 -m venv .venv
+# Activate:
+# Mac/Linux: source .venv/bin/activate
+# Windows: .\venv\Scripts\activate
+```
+
+### 3. Install Dependencies
+Install all required libraries defined in the manifest file.
+```bash
+pip install -r requirements.txt
+```
+
+---
+
+## 🛠️ Phase 2: The Workflow (Analysis Pipeline)
+Follow these steps sequentially. **The output of one step feeds directly into the next.**
+
+### Step A: Clean Data (Preprocessing)
+Run this script first to clean and standardize your raw input data. This creates the stable "Golden Copy."
+```bash
+python 02_scripts/data_preprocessing.py
+# ✅ OUTPUT: 'results/cleaned_data.csv' 
+```
+
+### Step B: Explore & Visualize (Analysis)
+Open JupyterLab and run your hypothesis testing in the notebook, always referencing the clean file created above.
+*   `jupyter lab`
+*   Open `03_notebooks/exploration.ipynb`
+
+**(Action: Run code to generate all figures and charts. Save these assets into the `results/` directory.)**
+
+### Step C: Deliver (The Story)
+Collect your validated findings from the `results/` folder—your final charts, tables, and derived metrics—and use them to write your narrative article.
+
+***
+
+## 📂 Quick Reference Map
+
+| Folder | Content | Role | Key Rule |
+| :--- | :--- | :--- | :--- |
+| **`01_data/`** | Raw source files. | **Input.** | ⚠️ **DO NOT TOUCH THIS FOLDER.** |
+| **`02_scripts/`** | Clean-up code. | **Process.** (Runs the core transformation logic). | Run this first! |
+| **`03_notebooks/`** | Scratchpad notebooks. | **Discover.** (Where you test ideas iteratively.) | Use for discovery, save outputs elsewhere. |
+| **`results/`** | Final figures and data. | **Output.** (The final assets used in your article). | Everything must live here. |
