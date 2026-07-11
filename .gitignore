@@ -1,0 +1,10 @@
+# Virtual environment files
+.venv/
+__pycache__/
+
+# Jupyter Notebook checkpoints and output directories (optional)
+.ipynb_checkpoints/
+
+# Data Outputs directory (we keep this clean, but might want to ignore its specific files if they get large)
+results/*.csv
+results/*.png
